@@ -60,6 +60,31 @@ here we get the MONGO_DB_USERNAME and password:
 
 ![Xnip2024-10-21_16-02-37](https://github.com/user-attachments/assets/7e17de31-0ddf-46b9-9cb7-6cd93a61c70c)
 
+
+To push my-app:1.0 imahge to AWS ECR app-repo wehave to follow the instructions:
+
+<img width="797" alt="Screenshot 2024-10-21 at 16 11 22" src="https://github.com/user-attachments/assets/c9f5024c-3ef2-45f5-9f80-cc5344df39bd">
+
+
+and login into the private repo to authenticate yourself -> use command docker login
+
+![Screenshot 2024-10-21 at 16 17 11](https://github.com/user-attachments/assets/98665e7a-f4aa-4b58-9107-4fae75fd28ca)
+
+in ordet to tell docker I want the image ,y-app:1.0  to be pushed to AWS repo with the name my-app, we tag the image:
+
+![Screenshot 2024-10-21 at 16 20 28](https://github.com/user-attachments/assets/695c995c-1032-4626-9c98-ebda901edd70)
+
+
+![Screenshot 2024-10-21 at 16 22 25](https://github.com/user-attachments/assets/4469112b-c8ec-417e-979c-4dfbf7f6ae8e)
+
+and now we push the image to the AWS repo:
+
+![Screenshot 2024-10-21 at 16 23 13](https://github.com/user-attachments/assets/0e0f587f-c10c-4ae0-951f-16f08b80a4c5)
+
+now we see the image inside the AWS repo:
+
+<img width="665" alt="Screenshot 2024-10-21 at 16 25 52" src="https://github.com/user-attachments/assets/cd659b0e-038c-4861-a16b-3b40e96e84d8">
+
 14, 16, 17 - Jenkins
 
 
