@@ -85,6 +85,49 @@ now we see the image inside the AWS repo:
 
 <img width="665" alt="Screenshot 2024-10-21 at 16 25 52" src="https://github.com/user-attachments/assets/cd659b0e-038c-4861-a16b-3b40e96e84d8">
 
-14, 16, 17 - Jenkins
+
+# Adjust Jenkinsfile to build and push Docker Image to AWS ECR
+
+we install Jenkins with a  Digital Ocean droplet, a server. We take 4GB of CPU:
+
+![Screenshot 2024-10-21 at 17 43 53](https://github.com/user-attachments/assets/d95e1e78-b873-4c09-9cf8-4c177911ad67)
+
+
+we attach a firewall to it with port 22 (ssh) and 8080 (whee Jenkins app starts and where we will expose it):
+
+![Screenshot 2024-10-21 at 17 06 14](https://github.com/user-attachments/assets/512746e6-fa03-4437-9121-4aa6111d4e9a)
+
+
+we do ssh into the jenkins-server:
+
+![Screenshot 2024-10-21 at 17 44 21](https://github.com/user-attachments/assets/064da874-4128-495d-b775-091eff1e8d9e)
+
+we install docker:
+
+![Screenshot 2024-10-21 at 17 49 08](https://github.com/user-attachments/assets/ef7a0e96-ba7c-478d-8ffb-73334bdac602)
+
+once installed, we can run Jenkins:
+
+![Screenshot 2024-10-21 at 17 56 51](https://github.com/user-attachments/assets/5e4b0ed7-1fe1-41fb-82eb-061d3e301310)
+
+we check:
+
+![Screenshot 2024-10-21 at 17 57 11](https://github.com/user-attachments/assets/150fb02f-9e3c-4a47-88ad-3ead005f5481)
+
+
+now we can access jenkins from the browser,  copy the ip from the jenkins-server droplet and add port 8080:
+
+![Screenshot 2024-10-21 at 17 59 15](https://github.com/user-attachments/assets/47adb2a3-1c4c-435f-9503-ce6627a72cf0)
+
+the initial password is located in /var/jenkins_home/secrets/initialAdminPassword. we enter the Docker container and cat the content inside /var/jenkins_home/secrets/initialAdminPassword. This is the password we put in Jenkins.
+
+![Screenshot 2024-10-21 at 18 01 21](https://github.com/user-attachments/assets/bfa7482e-e944-401a-befd-45eb53ea1e3d)
+
+we go to the suggested plugins and create our user and access Jenkins!
+
+![Screenshot 2024-10-21 at 18 05 08](https://github.com/user-attachments/assets/c26ea2ff-7458-4112-aeeb-789f205c9e3c)
+
+
+
 
 
