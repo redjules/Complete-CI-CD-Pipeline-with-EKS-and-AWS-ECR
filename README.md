@@ -9,14 +9,15 @@ Project description:
 - Integrate deploying to K8s cluster in the CI/CD pipeline from AWS ECR private registry
 - So the complete CI/CD project we build has the following configuration:
 a. CI step: increment version
-c. CI step: Build and push Docker image to16 AWS ECR
+b. CI step: Build artifact for Java Maven application
+c. CI step: Build and push Docker image to AWS ECR
 d. CD. Step: Deploy new application version to EKS cluster
 e. CD step: Commit the version update
 
 
 # Create private AWS ECR Docker repository
-video 10, 11 - Docker
-We go to ECR (Elastic Container Regostry) in AWS and create a repository, in my case I named it ana-repo.
+
+We go to ECR (Elastic Container Registry) in AWS and create a repository, in my case I named it ana-repo.
 
 <img width="604" alt="Screenshot 2024-10-21 at 15 13 52" src="https://github.com/user-attachments/assets/56ddb512-17a2-430b-9a97-428889058a1f">
 
@@ -24,6 +25,7 @@ You create a Docker repo per image. Inside the repo you have a collection of rel
 
 ![Screenshot 2024-10-21 at 15 20 42](https://github.com/user-attachments/assets/bd330562-5da6-4871-925f-d0e75f3b1e32)
 
+Integrate deploying to K8s cluster in the CI/CD pipeline from AWS ECR private registry
 
 We use the files from my-app (attached) and build an image with command:
 
@@ -61,7 +63,7 @@ here we get the MONGO_DB_USERNAME and password:
 ![Xnip2024-10-21_16-02-37](https://github.com/user-attachments/assets/7e17de31-0ddf-46b9-9cb7-6cd93a61c70c)
 
 
-To push my-app:1.0 imahge to AWS ECR app-repo wehave to follow the instructions:
+To push my-app:1.0 image to AWS ECR app-repo wehave to follow the instructions:
 
 <img width="797" alt="Screenshot 2024-10-21 at 16 11 22" src="https://github.com/user-attachments/assets/c9f5024c-3ef2-45f5-9f80-cc5344df39bd">
 
@@ -70,7 +72,7 @@ and login into the private repo to authenticate yourself -> use command docker l
 
 ![Screenshot 2024-10-21 at 16 17 11](https://github.com/user-attachments/assets/98665e7a-f4aa-4b58-9107-4fae75fd28ca)
 
-in ordet to tell docker I want the image ,y-app:1.0  to be pushed to AWS repo with the name my-app, we tag the image:
+in ordet to tell docker I want the image my-app:1.0  to be pushed to AWS repo with the name my-app, we tag the image:
 
 ![Screenshot 2024-10-21 at 16 20 28](https://github.com/user-attachments/assets/695c995c-1032-4626-9c98-ebda901edd70)
 
@@ -126,6 +128,15 @@ the initial password is located in /var/jenkins_home/secrets/initialAdminPasswor
 we go to the suggested plugins and create our user and access Jenkins!
 
 ![Screenshot 2024-10-21 at 18 05 08](https://github.com/user-attachments/assets/c26ea2ff-7458-4112-aeeb-789f205c9e3c)
+
+# Integrate deploying to K8s cluster in the CI/CD pipeline from AWS ECR private registry
+
+
+# Complete CI/CD project we build has the following configuration:
+a. CI step: increment version
+c. CI step: Build and push Docker image to16 AWS ECR
+d. CD. Step: Deploy new application version to EKS cluster
+e. CD step: Commit the version update
 
 
 
